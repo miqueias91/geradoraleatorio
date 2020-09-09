@@ -382,6 +382,13 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
         '</div>'+
 
         '<div class="form-row">'+
+          '<div class="form-group col-md-12">'+
+            '<label for="anotacoes_passaporte_filho'+i+'">Anotações do Passaporte</label>'+
+            '<input type="text" class="form-control filho anotacoes_passaporte" id="anotacoes_passaporte_filho'+i+'" value="">'+
+          '</div>'+
+        '</div>'+
+
+        '<div class="form-row">'+
           '<div class="form-group col-md-6">'+
             '<label for="nasc_filho'+i+'">Data Nasc.</label>'+
             '<input type="text" class="form-control filho nasc date" id="nasc_filho'+i+'">'+
@@ -972,7 +979,11 @@ function criarDocumentoCertidaoNascimento(pessoa, conjuge) {
   //GERAR TITULO DE ELEITOR
   criarDocumentoTituloEleitor(pessoa);
 
+  //GERAR CARTEIRA DE TRABALHO
   criarDocumentoCarteiraTrabalho(pessoa);
+
+  //GERAR PASSAPORTE
+  criarDocumentoPassaporte(pessoa);
 }
 
 function criarDocumentoCarteiraTrabalho(pessoa){
@@ -1218,7 +1229,7 @@ function criarContaLuz(pessoas) {
   $('#divdocumento').append(html_documento_cl);
 }
 
-//CRIANDO CERTIDAO DE CASAMENTO
+//CRIANDO CERTIDAO DE OBITO
 function criarDocumentoCertidaoObito(pessoa) {
   if (pessoa['obito'] == 's') {    
     //BUSCANDO A IMAGEM DO DOCUMENTO
@@ -1631,6 +1642,73 @@ function criarDocumentoCarteiraTrabalhoFolha4(pessoa) {
   html_documento_ct += '<figcaption style="position: absolute;margin-top: -254px;margin-left: 25px;color: #808080!important;font-size: 10px!important;font-family: Arial;text-align:left;width: 230px;">'+anotacoes.substr(0, 500)+'</figcaption>';
   html_documento_ct += '</figure><br>';
   $('#divdocumento').append(html_documento_ct);
+}
+
+function criarDocumentoPassaporte(pessoa){
+  criarDocumentoPassaporte1(pessoa);
+  criarDocumentoPassaporte2(pessoa);
+}
+
+//CRIANDO PASSAPORTE 1
+function criarDocumentoPassaporte1(pessoa) {
+  //BUSCANDO A IMAGEM DO DOCUMENTO
+  var img_doc = new Image();
+  img_doc.src = 'documentos/passaporte1.jpg';
+  var sexo = pessoa['sexo'];
+  var nome = pessoa['nome'];
+  var nasc = pessoa['nasc'];
+  var array_nome = nome.split(" ");
+  var primeironome = '';
+  var sobrenome = '';
+  for (var i = 0; i < array_nome.length; i++) {
+    primeironome = array_nome[0];
+    if (i > 0) {
+      sobrenome += array_nome[i]+' ';
+    }
+  }
+
+  var img_foto = new Image();
+  if (sexo == 'F') {
+    img_foto.src = 'documentos/avatar_feminino.png';
+  }
+  else{
+    img_foto.src = 'documentos/avatar_masculino.png';
+  }
+
+  var nasc = nasc.split("/");
+
+ 
+  var html_documento_pp = '';
+  html_documento_pp += '<figure class="documento_pp break" style="width:368;display: inline-block;position: relative;">';  
+  html_documento_pp += '<img src="'+img_foto.src+'" width="117" height="96" style="position: absolute;margin-top: 332px;margin-left: 239px;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);-o-transform: rotate(270deg);-ms-transform: rotate(270deg);transform: rotate(270deg);">';
+  html_documento_pp += '<img src="'+img_doc.src+'" width="368" height="550">';
+  html_documento_pp += '<figcaption style="position: absolute;margin-top: -183px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;font-weight:bold">'+primeironome.substr(0, 10)+'</figcaption>';
+  html_documento_pp += '<figcaption style="position: absolute;margin-top: -183px;margin-left: 119px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;font-weight:bold">'+sobrenome.substr(0, 20)+'</figcaption>';
+  html_documento_pp += '<figcaption style="position: absolute;margin-top: -154px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;font-weight:bold">Brasileiro(a)</figcaption>';
+  html_documento_pp += '<figcaption style="position: absolute;margin-top: -120px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;font-weight:bold">'+nasc[2]+'/'+nasc[1]+'/'+nasc[0]+'</figcaption>';
+  html_documento_pp += '</figure><br>';
+  $('#divdocumento').append(html_documento_pp);
+}
+
+//CRIANDO PASSAPORTE 2
+function criarDocumentoPassaporte2(pessoa) {
+  //BUSCANDO A IMAGEM DO DOCUMENTO
+  var img_doc = new Image();
+  img_doc.src = 'documentos/passaporte2.jpg';
+  var anotacoes_passaporte = pessoa['anotacoes_passaporte'];
+
+  if (!anotacoes_passaporte) {
+    anotacoes_passaporte = '';
+  }
+
+
+ 
+  var html_documento_pp = '';
+  html_documento_pp += '<figure class="documento_pp break" style="width:472px;display: inline-block;position: relative;">';  
+  html_documento_pp += '<img src="'+img_doc.src+'" width="550" height="370">';
+  html_documento_pp += '<figcaption style="position: absolute;margin-top: -321px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;width:200px;">'+anotacoes_passaporte.substr(0, 700)+'</figcaption>';
+  html_documento_pp += '</figure><br>';
+  $('#divdocumento').append(html_documento_pp);
 }
 
 function removeDiasData(ano, mes, dia, dias) {

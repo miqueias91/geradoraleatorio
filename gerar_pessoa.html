@@ -379,6 +379,13 @@
             </div>
 
             <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="anotacoes_passaporte_titular">Anotações do Passaporte</label>
+                <input type="text" class="form-control titular anotacoes_passaporte" id="anotacoes_passaporte_titular">
+              </div>
+            </div>
+
+            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nasc">Data Nasc.</label>
                 <input type="text" class="form-control titular nasc date" id="nasc">
@@ -679,6 +686,12 @@
               <div class="form-group col-md-12">
                 <label for="nome_conjuge">Nome</label>
                 <input type="text" class="form-control conjuge nome" id="nome_conjuge">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="anotacoes_passaporte_conjuge">Anotações do Passaporte</label>
+                <input type="text" class="form-control conjuge anotacoes_passaporte" id="anotacoes_passaporte_conjuge">
               </div>
             </div>
             <div class="form-row">
@@ -1693,6 +1706,7 @@
                 'data_admissao':$("#admissao_filho"+num).val(),
                 'data_demissao':$("#demissao_filho"+num).val(),
                 'anotacoes':$("#anotacoes_empregador_filho"+num).val(),
+                'anotacoes_passaporte':$("#anotacoes_passaporte_filho"+num).val(),
                 'remuneracao':$("#remuneracao_filho"+num).val(),
               });
             });
@@ -1744,6 +1758,7 @@
               'data_admissao':$("#admissao_titular").val(),
               'data_demissao':$("#demissao_titular").val(),
               'anotacoes':$("#anotacoes_empregador_titular").val(),
+              'anotacoes_passaporte':$("#anotacoes_passaporte_titular").val(),
               'remuneracao':$("#remuneracao_titular").val(),
 
               'conjuge':{
@@ -1792,6 +1807,7 @@
                 'data_admissao':$("#admissao_conjuge").val(),
                 'data_demissao':$("#demissao_conjuge").val(),
                 'anotacoes':$("#anotacoes_empregador_conjuge").val(),
+                'anotacoes_passaporte':$("#anotacoes_passaporte_conjuge").val(),
                 'remuneracao':$("#remuneracao_conjuge").val(),
               },
               filhos
