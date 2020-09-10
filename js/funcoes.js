@@ -191,13 +191,20 @@ function criaNumLogradouro() {
 
 //CRIA NUMERO CEP
 function criaCepLogradouro() {
-  var n = Math.floor(Math.random() * 99999999);
+  var n1 = Math.floor(Math.random() * 10);
+  var n2 = Math.floor(Math.random() * 10);
+  var n3 = Math.floor(Math.random() * 10);
+  var n4 = Math.floor(Math.random() * 10);
+  var n5 = Math.floor(Math.random() * 10);
+  var n6 = Math.floor(Math.random() * 10);
+  var n7 = Math.floor(Math.random() * 10);
+  var n8 = Math.floor(Math.random() * 10);
 
-  if (parseInt(n) == 0) {
-    n = 'S/N';
+  if (parseInt(n1) == 0) {
+    n1 = '1';
   }
 
-  $("#cep_logradouro").val(n)
+  $("#cep_logradouro").val(n1+''+n2+'.'+n3+''+n4+''+n5+'-'+n6+''+n7+''+n8);
 }
 
 //BUSCAR BAIRRO
@@ -549,7 +556,7 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
         '</div>'+
         '<div class="form-group col-md-3 empregado_filho'+i+'" style="display: none;">'+
           '<label for="pis_pasep_filho'+i+'">PIS/PASEP</label>'+
-          '<input type="text" class="form-control filho pis_pasep_filho'+i+'" id="pis_pasep_filho'+i+'" placeholder="">'+
+          '<input type="text" class="form-control filho pis_pasep pis_pasep_filho'+i+'" id="pis_pasep_filho'+i+'" placeholder="">'+
         '</div>'+
         '<div class="form-group col-md-3 empregado_filho'+i+'" style="display: none;">'+
           '<label for="admissao_filho'+i+'">Data Admissão</label>'+
@@ -572,7 +579,7 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
         '</div>'+
         '<div class="form-group col-md-3">'+
           '<label for="cnpj_empregador_filho'+i+'">CNPJ do Empregador</label>'+
-          '<input type="text" class="form-control filho cnpj_empregador_filho'+i+'" id="cnpj_empregador_filho'+i+'" placeholder="">'+
+          '<input type="text" class="form-control filho cnpj cnpj_empregador_filho'+i+'" id="cnpj_empregador_filho'+i+'" placeholder="">'+
         '</div>'+
         '<div class="form-group col-md-3">'+
           '<label for="cargo_filho'+i+'">Cargo</label>'+
@@ -583,7 +590,7 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
       '<div class="form-row empregado_filho'+i+'" style="display: none;">'+
         '<div class="form-group col-md-3">'+
           '<label for="cep_logradouro_empregador_filho'+i+'">CEP&nbsp;do&nbsp;Empre.</label>'+
-          '<input type="text" class="form-control filho cep_logradouro_empregador_filho'+i+'" id="cep_logradouro_empregador_filho'+i+'">'+
+          '<input type="text" class="form-control filho cep cep_logradouro_empregador_filho'+i+'" id="cep_logradouro_empregador_filho'+i+'">'+
         '</div>'+
 
         '<div class="form-group col-md-4">'+
@@ -647,10 +654,36 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
           '<label for="anotacoes_empregador_filho'+i+'">Anotações</label>'+
           '<input type="text" class="form-control filho anotacoes_empregador_filho'+i+'" id="anotacoes_empregador_filho'+i+'" placeholder="">'+
         '</div>'+
+      '</div>'+
+
+      '<div class="form-row">'+
+        '<div class="form-group col-md-3">'+
+          '<label>Atestado Médico</label>'+
+          '<select id="atestadofilho'+i+'" class="form-control filho atestado_filho" num="'+i+'">'+
+            '<option value="n">Não</option>'+
+            '<option value="s">Sim</option>'+
+          '</select>'+
+        '</div>'+
+
+        '<div class="form-group col-md-7 atestado_filho'+i+'" style="display: none;">'+
+          '<label for="descricao_atestado_filho'+i+'">Descrição do Atestado</label>'+
+          '<input type="text" class="form-control filho'+i+' descricao_atestado_filho'+i+'" id="descricao_atestado_filho'+i+'" placeholder="">'+
+        '</div>'+
+
+        '<div class="form-group col-md-2 atestado_filho'+i+'" style="display: none;">'+
+          '<label for="data_atestado_filho'+i+'">Data do Atestado</label>'+
+          '<input type="text" class="form-control filho'+i+' data_atestado_filho'+i+' date" id="data_atestado_filho'+i+'">'+
+        '</div>'+
       '</div>'
   }
+
   $("#grupofilhos").html(htmlfilho);
   $('.date').mask('99/99/9999');
+  $('.cpf').mask('999.999.999-99');
+  $('.pis_pasep').mask('999.99999.99-9');
+  $('.cnpj').mask('99.999.999/9999-99');
+  $('.rg').mask('99.999.999-9');
+  $('.te').mask('9999 9999 9999 9999');
   $('.valor').maskMoney({
     allowNegative: false, 
     thousands:'', 
@@ -681,11 +714,11 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
     $("#nasc_filho"+i).val(data_nasc_filho);
   }
 
-    //CARREGO A DATA ATUAL PARA O OBITO
-    var ano_obito = anoatual;
-    var mes_obito = mesatual;
-    var dia_obito = diaatual;
-    $(".data_obito_filho").val(dia_obito+'/'+mes_obito+'/'+ano_obito);
+  //CARREGO A DATA ATUAL PARA O OBITO
+  var ano_obito = anoatual;
+  var mes_obito = mesatual;
+  var dia_obito = diaatual;
+  $(".data_obito_filho").val(dia_obito+'/'+mes_obito+'/'+ano_obito);
 
   //MOSTRA/ESCONDE DADOS DO FALECIMENTO FILHO
   $('.obito_filho').change(function(){
@@ -711,12 +744,14 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
       $(".empregado_filho"+num).css("display","");
       $("#pis_pasep_filho"+num).val(gerarNumeroPIS_PASEP());
       $("#cnpj_empregador_filho"+num).val(gerarNumeroCNPJ());
-      $("#cidade_empregador_filho"+num).val("");
-      $("#estado_empregador_filho"+num).val("");
-      $("#endereco_empregador_filho"+num).val("");
-      $("#num_logradouro_empregador_filho"+num).val("");
-      $("#cep_logradouro_empregador_filho"+num).val("");
-      $("#bairro_empregador_filho"+num).val("");
+      $("#cidade_empregador_filho"+num).val($("#cidade_filho"+num).val().toUpperCase());
+      $("#estado_empregador_filho"+num).val($("#estado_filho"+num).val());
+
+      criaEndereco();
+      $("#endereco_empregador_filho"+num).val($("#tipo_moradia").val()+' '+$("#logradouro").val());
+      $("#num_logradouro_empregador_filho"+num).val($("#num_logradouro").val());
+      $("#cep_logradouro_empregador_filho"+num).val($("#cep_logradouro").val());
+      $("#bairro_empregador_filho"+num).val($("#bairro").val());
     }
     else{
       $(".empregado_filho"+num).css("display","none");
@@ -728,6 +763,32 @@ function criaDadosFilhos(maxfilho, sobrenomeprincipal, sobrenomeconjuge, nome_ma
       $("#num_logradouro_empregador_filho"+num).val("");
       $("#cep_logradouro_empregador_filho"+num).val("");
       $("#bairro_empregador_filho"+num).val("");
+    }
+  });
+  
+  var modelo_texto_atestado = 'Atesto para os devidos fins, que o Sr. [NOME_PACIENTE], inscrito no CPF n.º [NUM_CPF_PACIENTE], foi atendido no dia [DATA_ATESTADO] às [HORA_ATESTADO] apresentando quadro de [PROBLEMA_SAUDE] e necessita de [DIA_REPOUSO] dias de repouso.'
+
+  //MOSTRA/ESCONDE DADOS DO ATESTADO
+  $('.atestado_filho').change(function(){
+    var num = $(this).attr('num');
+    if ($(this).val() == 's') {
+      $(".atestado_filho"+num).css("display","");
+      $("#data_atestado_filho"+num).val(diaatual+'/'+mesatual+'/'+anoatual);
+
+      var aux_modelo_texto_atestado = modelo_texto_atestado;
+      var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NOME_PACIENTE]',$("#nome_filho"+num).val());
+      var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NUM_CPF_PACIENTE]',$("#cpf_filho"+num).val());
+      var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DATA_ATESTADO]',$("#data_atestado_filho"+num).val());
+      var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[HORA_ATESTADO]','12:00');
+      var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[PROBLEMA_SAUDE]','febre');
+      var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DIA_REPOUSO]','15');
+
+      $("#descricao_atestado_filho"+num).val(aux_modelo_texto_atestado);
+    }
+    else{
+      $(".atestado_filho"+num).css("display","none");
+      $("#descricao_atestado_filho"+num).val("");
+      $("#data_atestado_filho"+num).val("");
     }
   });
 
@@ -984,6 +1045,9 @@ function criarDocumentoCertidaoNascimento(pessoa, conjuge) {
 
   //GERAR PASSAPORTE
   criarDocumentoPassaporte(pessoa);
+
+  //GERAR ATESTADO
+  criarAtestado(pessoa)
 }
 
 function criarDocumentoCarteiraTrabalho(pessoa){
@@ -1694,7 +1758,7 @@ function criarDocumentoPassaporte1(pessoa) {
 function criarDocumentoPassaporte2(pessoa) {
   //BUSCANDO A IMAGEM DO DOCUMENTO
   var img_doc = new Image();
-  img_doc.src = 'documentos/passaporte2.jpg';
+  img_doc.src = 'documentos/passaporte2.png';
   var anotacoes_passaporte = pessoa['anotacoes_passaporte'];
 
   if (!anotacoes_passaporte) {
@@ -1709,6 +1773,38 @@ function criarDocumentoPassaporte2(pessoa) {
   html_documento_pp += '<figcaption style="position: absolute;margin-top: -321px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;width:200px;">'+anotacoes_passaporte.substr(0, 700)+'</figcaption>';
   html_documento_pp += '</figure><br>';
   $('#divdocumento').append(html_documento_pp);
+}
+
+//CRIANDO ATESTADO 2
+function criarAtestado(pessoa) {
+  if (pessoa['atestado'] == 's') {
+    //BUSCANDO A IMAGEM DO DOCUMENTO
+    var img_doc = new Image();
+    img_doc.src = 'documentos/atestado.png';
+    var anotacoes_atestado = pessoa['anotacoes_atestado'];
+
+    if (!anotacoes_atestado) {
+      anotacoes_atestado = '';
+    }
+
+    var data_atestado = pessoa['data_atestado'];
+    var array_data = data_atestado.split('/');
+    var dia_atestado = array_data[0];
+    var mes_atestado = array_data[1];
+    var ano_atestado = array_data[2];
+
+    data_atestado = dia_atestado+' de '+mesExtenso(mes_atestado)+' de '+ano_atestado;
+
+   
+    var html_documento_at = '';
+    html_documento_at += '<figure class="documento_at break" style="width:550px;display: inline-block;position: relative;">';  
+    html_documento_at += '<img src="'+img_doc.src+'" width="550" height="500">';
+    html_documento_at += '<figcaption style="position: absolute;margin-top: -390px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:left;width:500px;">'+anotacoes_atestado.substr(0, 1000)+'</figcaption>';
+    html_documento_at += '<figcaption style="position: absolute;margin-top: -139px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:center;width:500px;">'+data_atestado+'</figcaption>';
+    html_documento_at += '<figcaption style="position: absolute;margin-top: -116px;margin-left: 35px;color: #000000!important;font-size: 10px!important;font-family: Arial;text-align:center;width:500px;font-weight:bold;">juristta.com</figcaption>';
+    html_documento_at += '</figure><br>';
+    $('#divdocumento').append(html_documento_at);
+  }
 }
 
 function removeDiasData(ano, mes, dia, dias) {

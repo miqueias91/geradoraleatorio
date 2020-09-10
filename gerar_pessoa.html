@@ -450,7 +450,7 @@
             <div class="form-row">
               <div class="form-group col-md-3">
                 <label for="cep_logradouro_titular">CEP</label>
-                <input type="text" class="form-control titular cep_logradouro_" id="cep_logradouro_titular">
+                <input type="text" class="form-control titular cep cep_logradouro_" id="cep_logradouro_titular">
               </div>
 
               <div class="form-group col-md-4">
@@ -579,7 +579,7 @@
               </div>
               <div class="form-group col-md-3 empregado" style="display: none;">
                 <label for="pis_pasep_titular">PIS/PASEP</label>
-                <input type="text" class="form-control titular pis_pasep_titular" id="pis_pasep_titular" placeholder="">
+                <input type="text" class="form-control titular pis_pasep pis_pasep_titular" id="pis_pasep_titular" placeholder="">
               </div>
               <div class="form-group col-md-3 empregado" style="display: none;">
                 <label for="admissao_titular">Data Admissão</label>
@@ -602,7 +602,7 @@
               </div>
               <div class="form-group col-md-3">
                 <label for="cnpj_empregador_titular">CNPJ do Empregador</label>
-                <input type="text" class="form-control titular cnpj_empregador_titular" id="cnpj_empregador_titular" placeholder="">
+                <input type="text" class="form-control titular cnpj cnpj_empregador_titular" id="cnpj_empregador_titular" placeholder="">
               </div>
               <div class="form-group col-md-3">
                 <label for="cargo_titular">Cargo</label>
@@ -613,7 +613,7 @@
             <div class="form-row empregado" style="display: none;">
               <div class="form-group col-md-3">
                 <label for="cep_logradouro_empregador_titular">CEP&nbsp;do&nbsp;Empre.</label>
-                <input type="text" class="form-control titular cep_logradouro_empregador_titular" id="cep_logradouro_empregador_titular">
+                <input type="text" class="form-control titular cep cep_logradouro_empregador_titular" id="cep_logradouro_empregador_titular">
               </div>
 
               <div class="form-group col-md-4">
@@ -676,6 +676,26 @@
               <div class="form-group col-md-12">
                 <label for="anotacoes_empregador_titular">Anotações</label>
                 <input type="text" class="form-control titular anotacoes_empregador_titular" id="anotacoes_empregador_titular" placeholder="">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="atestado_titular">Atestado Médico</label>
+                <select id="atestado_titular" class="form-control titular">
+                  <option value="n">Não</option>
+                  <option value="s">Sim</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-7 atestado_titular" style="display: none;">
+                <label for="descricao_atestado_titular">Descrição do Atestado</label>
+                <input type="text" class="form-control titular descricao_atestado_titular" id="descricao_atestado_titular" placeholder="">
+              </div>
+
+              <div class="form-group col-md-2 atestado_titular" style="display: none;">
+                <label for="data_atestado_titular">Data do Atestado</label>
+                <input type="text" class="form-control titular data_atestado_titular date" id="data_atestado_titular">  
               </div>
             </div>
           </fieldset>
@@ -759,7 +779,7 @@
             <div class="form-row">
               <div class="form-group col-md-3">
                 <label for="cep_logradouro_conjuge">CEP</label>
-                <input type="text" class="form-control conjuge cep_logradouro_" id="cep_logradouro_conjuge">
+                <input type="text" class="form-control conjuge cep cep_logradouro_" id="cep_logradouro_conjuge">
               </div>
 
               <div class="form-group col-md-4">
@@ -888,7 +908,7 @@
               </div>
               <div class="form-group col-md-3 empregado_conjuge" style="display: none;">
                 <label for="pis_pasep_conjuge">PIS/PASEP</label>
-                <input type="text" class="form-control conjuge pis_pasep_conjuge" id="pis_pasep_conjuge" placeholder="">
+                <input type="text" class="form-control conjuge pis_pasep pis_pasep_conjuge" id="pis_pasep_conjuge" placeholder="">
               </div>
               <div class="form-group col-md-3 empregado_conjuge" style="display: none;">
                 <label for="admissao_conjuge">Data Admissão</label>
@@ -911,7 +931,7 @@
               </div>
               <div class="form-group col-md-3">
                 <label for="cnpj_empregador_conjuge">CNPJ do Empregador</label>
-                <input type="text" class="form-control conjuge cnpj_empregador_conjuge" id="cnpj_empregador_conjuge" placeholder="">
+                <input type="text" class="form-control conjuge cnpj cnpj_empregador_conjuge" id="cnpj_empregador_conjuge" placeholder="">
               </div>
               <div class="form-group col-md-3">
                 <label for="cargo_conjuge">Cargo</label>
@@ -922,7 +942,7 @@
             <div class="form-row empregado_conjuge" style="display: none;">
               <div class="form-group col-md-3">
                 <label for="cep_logradouro_empregador_conjuge">CEP&nbsp;do&nbsp;Empre.</label>
-                <input type="text" class="form-control conjuge cep_logradouro_empregador_conjuge" id="cep_logradouro_empregador_conjuge">
+                <input type="text" class="form-control conjuge cep cep_logradouro_empregador_conjuge" id="cep_logradouro_empregador_conjuge">
               </div>
 
               <div class="form-group col-md-4">
@@ -987,6 +1007,25 @@
                 <input type="text" class="form-control conjuge anotacoes_empregador_conjuge" id="anotacoes_empregador_conjuge" placeholder="">
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="atestado_conjuge">Atestado Médico</label>
+                <select id="atestado_conjuge" class="form-control conjuge">
+                  <option value="n">Não</option>
+                  <option value="s">Sim</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-7 atestado_conjuge" style="display: none;">
+                <label for="descricao_atestado_conjuge">Descrição do Atestado</label>
+                <input type="text" class="form-control conjuge descricao_atestado_conjuge" id="descricao_atestado_conjuge" placeholder="">
+              </div>
+
+              <div class="form-group col-md-2 atestado_conjuge" style="display: none;">
+                <label for="data_atestado_conjuge">Data do Atestado</label>
+                <input type="text" class="form-control conjuge data_atestado_conjuge date" id="data_atestado_conjuge">  
+              </div>
+            </div>
           </fieldset>
 
           <fieldset id="filho" style="display: none;">
@@ -1008,6 +1047,7 @@
     <script src="./js/jquery.maskMoney.min.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/funcoes.js"></script>
+    <!-- <script src="./js/teste.js"></script> -->
 
     <script type="text/javascript">
       $( document ).ready(function() {
@@ -1016,7 +1056,8 @@
         var avo1_materno_filho = '';
         var possui_pis_pasep_titular = 'n';
         var possui_pis_pasep_conjuge = 'n';
-        var possui_pis_pasep_titular = 'n';
+        var possui_pis_pasep_filho = 'n';
+        var modelo_texto_atestado = 'Atesto para os devidos fins, que o Sr. [NOME_PACIENTE], inscrito no CPF n.º [NUM_CPF_PACIENTE], foi atendido no dia [DATA_ATESTADO] às [HORA_ATESTADO] apresentando quadro de [PROBLEMA_SAUDE] e necessita de [DIA_REPOUSO] dias de repouso.'
 
         //PEGANDO A DATA ATUAL
         var date = new Date();
@@ -1077,12 +1118,14 @@
             $(".empregado").css("display","");
             $("#pis_pasep_titular").val(gerarNumeroPIS_PASEP());
             $("#cnpj_empregador_titular").val(gerarNumeroCNPJ());
-            $("#cidade_empregador_titular").val("");
-            $("#estado_empregador_titular").val("");
-            $("#endereco_empregador_titular").val("");
-            $("#num_logradouro_empregador_titular").val("");
-            $("#cep_logradouro_empregador_titular").val("");
-            $("#bairro_empregador_titular").val("");
+            $("#cidade_empregador_titular").val($("#cidade_opc").val().toUpperCase());
+            $("#estado_empregador_titular").val($("#estado_opc").val());
+
+            criaEndereco();
+            $("#endereco_empregador_titular").val($("#tipo_moradia").val()+' '+$("#logradouro").val());
+            $("#num_logradouro_empregador_titular").val($("#num_logradouro").val());
+            $("#cep_logradouro_empregador_titular").val($("#cep_logradouro").val());
+            $("#bairro_empregador_titular").val($("#bairro").val());
           }
           else{
             $(".empregado").css("display","none");
@@ -1096,6 +1139,30 @@
             $("#bairro_empregador_titular").val("");
           }
         });
+
+        //MOSTRA/ESCONDE DADOS DO ATESTADO
+        $('#atestado_titular').change(function(){
+          if ($(this).val() == 's') {
+            $(".atestado_titular").css("display","");
+            $("#data_atestado_titular").val(diaatual+'/'+mesatual+'/'+anoatual);
+
+            var aux_modelo_texto_atestado = modelo_texto_atestado;
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NOME_PACIENTE]',$("#nome_titular").val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NUM_CPF_PACIENTE]',$("#cpf").val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DATA_ATESTADO]',$("#data_atestado_titular").val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[HORA_ATESTADO]','12:00');
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[PROBLEMA_SAUDE]','febre');
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DIA_REPOUSO]','15');
+
+            $("#descricao_atestado_titular").val(aux_modelo_texto_atestado);
+          }
+          else{
+            $(".atestado_titular").css("display","none");
+            $("#descricao_atestado_titular").val("");
+            $("#data_atestado_titular").val("");
+          }
+        });
+
 
         //MOSTRA/ESCONDE DADOS DO FALECIMENTO DO CONJUGE
         $('#obito_conjuge').change(function(){
@@ -1119,12 +1186,14 @@
             $(".empregado_conjuge").css("display","");
             $("#pis_pasep_conjuge").val(gerarNumeroPIS_PASEP());
             $("#cnpj_empregador_conjuge").val(gerarNumeroCNPJ());
-            $("#cidade_empregador_conjuge").val("");
-            $("#estado_empregador_conjuge").val("");
-            $("#endereco_empregador_conjuge").val("");
-            $("#num_logradouro_empregador_conjuge").val("");
-            $("#cep_logradouro_empregador_conjuge").val("");
-            $("#bairro_empregador_conjuge").val("");
+            $("#cidade_empregador_conjuge").val($("#cidade_conjuge").val().toUpperCase());
+            $("#estado_empregador_conjuge").val($("#estado_conjuge").val());
+
+            criaEndereco();
+            $("#endereco_empregador_conjuge").val($("#tipo_moradia").val()+' '+$("#logradouro").val());
+            $("#num_logradouro_empregador_conjuge").val($("#num_logradouro").val());
+            $("#cep_logradouro_empregador_conjuge").val($("#cep_logradouro").val());
+            $("#bairro_empregador_conjuge").val($("#bairro").val());
           }
           else{
             $(".empregado_conjuge").css("display","none");
@@ -1136,6 +1205,29 @@
             $("#num_logradouro_empregador_conjuge").val("");
             $("#cep_logradouro_empregador_conjuge").val("");
             $("#bairro_empregador_conjuge").val("");
+          }
+        });
+
+        //MOSTRA/ESCONDE DADOS DO ATESTADO
+        $('#atestado_conjuge').change(function(){
+          if ($(this).val() == 's') {
+            $(".atestado_conjuge").css("display","");
+            $("#data_atestado_conjuge").val(diaatual+'/'+mesatual+'/'+anoatual);
+
+            var aux_modelo_texto_atestado = modelo_texto_atestado;
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NOME_PACIENTE]',$("#nome_conjuge").val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NUM_CPF_PACIENTE]',$("#cpf_conjuge").val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DATA_ATESTADO]',$("#data_atestado_conjuge").val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[HORA_ATESTADO]','12:00');
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[PROBLEMA_SAUDE]','febre');
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DIA_REPOUSO]','15');
+
+            $("#descricao_atestado_conjuge").val(aux_modelo_texto_atestado);
+          }
+          else{
+            $(".atestado_conjuge").css("display","none");
+            $("#descricao_atestado_conjuge").val("");
+            $("#data_atestado_conjuge").val("");
           }
         });
 
@@ -1174,6 +1266,31 @@
             $("#num_logradouro_empregador_filho"+num).val("");
             $("#cep_logradouro_empregador_filho"+num).val("");
             $("#bairro_empregador_filho"+num).val("");
+          }
+        });
+
+        //MOSTRA/ESCONDE DADOS DO ATESTADO
+        $('.atestado_filho').change(function(){
+          var num = $(this).attr('num');
+          if ($(this).val() == 's') {   
+
+            $(".atestado_filho"+num).css("display","");
+            $("#data_atestado_filho"+num).val(diaatual+'/'+mesatual+'/'+anoatual);
+
+            var aux_modelo_texto_atestado = modelo_texto_atestado;
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NOME_PACIENTE]',$("#nome_filho"+num).val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[NUM_CPF_PACIENTE]',$("#cpf_filho"+num).val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DATA_ATESTADO]',$("#data_atestado_filho"+num).val());
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[HORA_ATESTADO]','12:00');
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[PROBLEMA_SAUDE]','febre');
+            var aux_modelo_texto_atestado = aux_modelo_texto_atestado.replace('[DIA_REPOUSO]','15');
+
+            $("#descricao_atestado_filho"+num).val(aux_modelo_texto_atestado);
+          }
+          else{
+            $(".atestado_filho"+num).css("display","none");
+            $("#descricao_atestado_filho"+num).val("");
+            $("#data_atestado_filho"+num).val("");
           }
         });
 
@@ -1546,6 +1663,11 @@
         });
 
         $('.date').mask('99/99/9999');
+        $('.cpf').mask('999.999.999-99');
+        $('.rg').mask('99.999.999-9');
+        $('.pis_pasep').mask('999.99999.99-9');
+        $('.cnpj').mask('99.999.999/9999-99');
+        $('.te').mask('9999 9999 9999 9999');
         $('.cep').mask('99.999-999');
         $('.valor').maskMoney({
           allowNegative: false, 
@@ -1708,6 +1830,9 @@
                 'anotacoes':$("#anotacoes_empregador_filho"+num).val(),
                 'anotacoes_passaporte':$("#anotacoes_passaporte_filho"+num).val(),
                 'remuneracao':$("#remuneracao_filho"+num).val(),
+                'atestado':$("#atestadofilho"+num).val(),
+                'data_atestado':$("#data_atestado_filho"+num).val(),
+                'anotacoes_atestado':$("#descricao_atestado_filho"+num).val(),
               });
             });
 
@@ -1743,7 +1868,6 @@
               'eleitor':eleitor_titular,
               'titulo_eleitor':$('#te').val(),
               'estado_civil':$('#estadocivil_opc').val(),
-
               'possui_pis_pasep':possui_pis_pasep_titular,
               'pis_pasep':$("#pis_pasep_titular").val(),
               'empregador':$("#empregador_titular").val(),
@@ -1760,7 +1884,9 @@
               'anotacoes':$("#anotacoes_empregador_titular").val(),
               'anotacoes_passaporte':$("#anotacoes_passaporte_titular").val(),
               'remuneracao':$("#remuneracao_titular").val(),
-
+              'atestado':$("#atestado_titular").val(),
+              'data_atestado':$("#data_atestado_titular").val(),
+              'anotacoes_atestado':$("#descricao_atestado_titular").val(),
               'conjuge':{
                 'sexo':sexo_conjuge, 
                 'rg':rg_conjuge, 
@@ -1792,7 +1918,6 @@
                 'eleitor':eleitor_conjuge,
                 'titulo_eleitor':$('#te_conjuge').val(),
                 'estado_civil':$('#estadocivil_opc').val(),
-
                 'possui_pis_pasep':possui_pis_pasep_conjuge,
                 'pis_pasep':$("#pis_pasep_conjuge").val(),
                 'empregador':$("#empregador_conjuge").val(),
@@ -1809,9 +1934,13 @@
                 'anotacoes':$("#anotacoes_empregador_conjuge").val(),
                 'anotacoes_passaporte':$("#anotacoes_passaporte_conjuge").val(),
                 'remuneracao':$("#remuneracao_conjuge").val(),
+                'atestado':$("#atestado_conjuge").val(),
+                'data_atestado':$("#data_atestado_conjuge").val(),
+                'anotacoes_atestado':$("#descricao_atestado_conjuge").val(),
               },
               filhos
             });
+
             criaDocumentos(pessoas);
             setTimeout(function(){ 
               aguarde('close');
