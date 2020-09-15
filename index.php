@@ -1013,7 +1013,7 @@
               <div id="grupofilhos"></div>
             </fieldset>
             <div class="text-center">
-              <a class="btn btn-primary" href="./gerar_pessoa.php" role="button" style="margin-bottom: 10px;">GERAR NOVA PESSOA</a>
+              <a class="btn btn-primary" href="./" role="button" style="margin-bottom: 10px;">GERAR NOVA PESSOA</a>
               <!-- <button type="button" class="btn btn-primary gerar_doc" style="margin-bottom: 10px;">GERAR DOCUMENTOS</button> -->
             </div>
           </form>

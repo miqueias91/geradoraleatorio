@@ -13,10 +13,10 @@
               <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./sobre-nos.php">Sobre Nós</a>
+              <a class="nav-link" href="./sobre-nos">Sobre Nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contato.php">Contato</a>
+              <a class="nav-link" href="contato">Contato</a>
             </li>
           </ul>
         </div>
