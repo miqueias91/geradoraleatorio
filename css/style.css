@@ -1,18 +1,11 @@
 body {
-    color: #fff;
-    margin: 0;
-    font-size: 0.875rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
-    line-height: 1.43;
-    letter-spacing: 0.01071em;
-    background-color: #666;
 }
 h1 {
     font-size: 23px;
 }
-p {
-	font-size: 20px!important;
+p, a {
+	font-size: 15px!important;
 }
 
 .nivel_1 {
@@ -51,12 +44,11 @@ p {
 	font-size: 14px!important;
 	margin-left: 100px!important;
 }
+/*
 .bg-dark {
-  background-color: rgba(0,0,0,0.8)!important;
+  background-color: #32302C!important;
 }
-.navbar {
-  /*height: 100px;*/
-}
+
 .navbar-dark .navbar-toggler {
   border-color: transparent!important;
 }
@@ -68,9 +60,9 @@ p {
 }
 .fas {
   color: #fff;
-}
+}*/
 /* FORMULARIO */
-.form-check_ultimo {
+/*.form-check_ultimo {
 	margin-bottom: 1rem!important;
 }
 .form-group {
@@ -90,16 +82,16 @@ p {
     color: #fff;
     background-color: #666;
     border-color: transparent;
-    border-bottom: 1px solid #6B4616;
+    border-bottom: 1px solid #4BB7C3;
     box-shadow: 0 0 0 0.2rem transparent;
 }
 .form-check-input:disabled ~ .form-check-label {
     color: #fff;
-}
-.btn-secondary {
+}*/
+.btn-primary {
     color: #fff;
     box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
-    background-color: #6B4616;
+    background-color: #4BB7C3;
     border: 0;
 
     padding: 6px 16px;
@@ -118,20 +110,20 @@ p {
 button:focus {
   outline: transparent;
 }
-.btn-secondary:hover {
+.btn-primary:hover {
     color: #fff;
     box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
-    background-color: #6B4616;
+    background-color: #4BB7C3;
 }
-.btn-secondary:not(:disabled):not(.disabled):active {
+.btn-primary:not(:disabled):not(.disabled):active {
     color: #fff;
-    background-color: #6B4616;
-    border-color: #6B4616;
+    background-color: #4BB7C3;
+    border-color: #4BB7C3;
 }
-.btn-secondary:focus {
+.btn-primary:focus {
     color: #fff;
-    background-color: #6B4616;
-    background-color: #6B4616;
+    background-color: #4BB7C3;
+    background-color: #4BB7C3;
     box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
 }
 /* DIALOG */
@@ -139,12 +131,12 @@ button:focus {
   border: 1px solid #666;
 }
 .ui-dialog .ui-dialog-buttonpane button {
-    background-color: #6B4616;
+    background-color: #4BB7C3;
     color: #fff;
 }
 .ui-draggable .ui-dialog-titlebar {
     color: #fff;
-    background-color: rgba(0,0,0,0.8);
+    background-color: #32302C;
 }
 .ui-dialog .ui-dialog-titlebar-close {
     display: none;
@@ -159,4 +151,7 @@ button:focus {
 /* QUEBRAR PAGINA NA IMPRESSAO */
 .break { 
   page-break-before: always; 
+}
+.border-bottom {
+    border-bottom: 1px solid rgba(50, 48, 44,0.8)!important;
 }

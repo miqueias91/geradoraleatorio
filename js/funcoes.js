@@ -1,3 +1,52 @@
+$('.date').mask('99/99/9999');
+$('.cpf').mask('999.999.999-99');
+$('.rg').mask('99.999.999-9');
+$('.pis_pasep').mask('999.99999.99-9');
+$('.cnpj').mask('99.999.999/9999-99');
+$('.te').mask('9999 9999 9999 9999');
+$('.cep').mask('99.999-999');
+$('.valor').maskMoney({
+  allowNegative: false, 
+  thousands:'', 
+  decimal:',', 
+  affixesStay: false
+});
+
+//GERAR NUMERO DE CNH
+function gerarNumeroCNH() {
+  var n1 = Math.floor(Math.random() * 10);
+  var n2 = Math.floor(Math.random() * 10);
+  var n3 = Math.floor(Math.random() * 10);
+  var n4 = Math.floor(Math.random() * 10);
+  var n5 = Math.floor(Math.random() * 10);
+  var n6 = Math.floor(Math.random() * 10);
+  var n7 = Math.floor(Math.random() * 10);
+  var n8 = Math.floor(Math.random() * 10);
+  var n9 = Math.floor(Math.random() * 10);
+
+
+  var soma1 = (n1 * 9) + (n2 * 8) + (n3 * 7) + (n4 * 6) + (n5 * 5) + (n6 * 4) + (n7 * 3) + (n8 * 2) + (n9 * 1);
+  var dsc = 0;
+  var D_V1 = soma1 % 11;
+  if (D_V1 >= 10) {
+    D_V1 = 0;
+    dsc = 2;
+  }
+
+  var soma2 = (n1 * 1) + (n2 * 2) + (n3 * 3) + (n4 * 4) + (n5 * 5) + (n6 * 6) + (n7 * 7) + (n8 * 8) + (n9 * 9);
+  var D_V2 = soma2 % 11;
+
+  if (D_V2 > 9) {
+    D_V2 = 0;
+  }
+  else{
+    D_V2 = parseInt(D_V2) - parseInt(dsc);
+  }
+
+  var retorno = '';
+  retorno = n1+''+n2+''+n3+""+n4+''+n5+''+n6+""+''+n7+''+n8+''+n9+D_V1+''+D_V2;
+  return retorno;
+}
 //GERAR NUMERO DO CNPJ
 function gerarNumeroCNPJ() {
   var n1 = Math.floor(Math.random() * 10);
@@ -274,12 +323,12 @@ function criaOpcaoFilhos(maxfilho){
     htmlfilho += 
       '<div class="row nivel_3">'+
       '  <div class="form-group col-md-12">'+
-      '    <label>4.1.'+i+'. Dados do filho</label>'+
+      '    <label>5.1.'+i+'. Dados do filho</label>'+
       '  </div>'+
       '</div>'+
       '<div class="row nivel_4">'+
       '  <div class="form-group col-md-12">'+
-      '    <label><i>4.1.'+i+'.1. Qual o Sexo?</i></label>'+
+      '    <label><i>5.1.'+i+'.1. Qual o Sexo?</i></label>'+
       '  </div>'+
       '</div>'+
       '<div class="row sub_nivel_4">'+
@@ -297,7 +346,7 @@ function criaOpcaoFilhos(maxfilho){
 
       '<div class="row nivel_4">'+
       '  <div class="form-group col-md-12">'+
-      '    <label><i>4.1.'+i+'.2. Qual a idade?</i></label>'+
+      '    <label><i>5.1.'+i+'.2. Qual a idade?</i></label>'+
       '  </div>'+
       '</div>'+
       '<div class="row sub_nivel_4">'+
@@ -308,7 +357,7 @@ function criaOpcaoFilhos(maxfilho){
 
       '<div class="row nivel_4">'+
       '  <div class="form-group col-md-12">'+
-      '    <label><i>4.1.'+i+'.3. Qual o local de nascimento?</i></label>'+
+      '    <label><i>5.1.'+i+'.3. Qual o local de nascimento?</i></label>'+
       '  </div>'+
       '</div>'+
       '<div class="form-row sub_nivel_4">'+
