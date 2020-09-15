@@ -1,3 +1,11 @@
+<?php
+include_once "config/config.php";
+include_once "$CLASS_PATH/class.system.php";
+$sys = new system();
+if (!$ambiente_desenvolvimento) {
+  $sys->registraAcesso();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
