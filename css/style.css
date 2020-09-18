@@ -44,6 +44,10 @@ p, a {
 	font-size: 14px!important;
 	margin-left: 100px!important;
 }
+.meu-card{
+    padding: 20px;
+    text-align: center;
+}
 /*
 .bg-dark {
   background-color: #32302C!important;

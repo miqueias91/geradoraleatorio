@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Gerador Online de Documentos de Pessoas, gera nome, RG, CNPJ, CEP, Endereço, Certidão de Casamento, Certidão de Obito, CNPJ, Carteira de Trabalho, Passaporte, Atestado Médico." />
+  <meta name="description" content="Gerador Online de Documentos de Pessoas, gera nome, RG, CPF, CEP, Endereço, Certidão de Casamento, Certidão de Obito, CPF, Carteira de Trabalho, Passaporte, Atestado Médico." />
   <meta name="author" content="Miqueias Matias Caetano">
   <link rel="icon" href="image/favicon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="fontawesome-free-5.6.3-web/css/all.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
-  <title>Innovate Soft - Gerador Online de CNPJ</title>
+  <title>Innovate Soft - Gerador Online de Certidão de Casamento</title>
 
 </head>
 
@@ -40,13 +40,12 @@
       ?>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Gerador Online de CNPJ</h1>
+        <h1 class="mt-4">Gerador Online de Certidão de Casamento</h1>
         <p>Este site foi desenvolvido com o propósito de auxiliar programadores, analistas de sistemas e estudantes a testarem seus softwares. A má utilização desse conteúdo é de total responsabilidade do visitante. Sem vínculos com a Receita Federal.</p>
 
         <p>Todos os documentos são gerados de maneira aleatória não tendo necessariamente relação com pessoas ou empresas existentes.
         Sem vínculos com a Receita Federal.</p>
       </div>
-
       <div id='divaguarde' style="display:none;color: #808080;justify-items: center;align-items: center;justify-content: center;height: -webkit-fill-available;" class="dialogo" title='Aviso' align='center'>
         <center>Carregando...</center>
       </div>  
@@ -54,21 +53,23 @@
       <div id='divdocumento' style="display:none;width:800px;color: #808080" class="dialogo" title='Impressão de Documento' align='center'>
       </div>  
 
-      <div  class="container">   
+      <div class="container">   
+
         <div class="starter-template" id="dados" style="padding: 0 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
               <legend style="margin-left: -5px;font-weight: bold;margin-top: 25px;">Resultado</legend>
+
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="cnpj_">Número do CNPJ</label>
-                  <input type="text" class="form-control cnpj" id="cnpj_">
+                  <label for="certidaocasamento_">Número da Certidão de Casamento</label>
+                  <input type="text" class="form-control certidao" id="certidaocasamento_">
                 </div>
               </div>
             </fieldset>
 
             <div class="text-center">
-              <a class="btn btn-primary criar_cnpj"  style="text-align: center;" href="#" role="button">GERAR CNPJ</a>
+              <a class="btn btn-primary criar_certidaocasamento"  style="text-align: center;" href="#" role="button">GERAR CERTIDÃO DE CASAMENTO</a>
             </div>
           </form>
         </div>
@@ -98,11 +99,11 @@
   </script>
   <script type="text/javascript">
     $( document ).ready(function() { 
-      $("#cnpj_").val(gerarNumeroCNPJ());
+      $("#certidaocasamento_").val(gerarNumeroCertidao());
       //ACAO DO BOTAO CRIAR PERSONAGEM
-      $('.criar_cnpj').click(function(){
-        $("#cnpj_").val(gerarNumeroCNPJ());
-      }); 
+      $('.criar_certidaocasamento').click(function(){
+        $("#certidaocasamento_").val(gerarNumeroCertidao());
+      });    
     });
   </script>
 

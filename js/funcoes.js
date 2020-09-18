@@ -3,7 +3,9 @@ $('.cpf').mask('999.999.999-99');
 $('.rg').mask('99.999.999-9');
 $('.pis_pasep').mask('999.99999.99-9');
 $('.cnpj').mask('99.999.999/9999-99');
-$('.te').mask('9999 9999 9999 9999');
+$('.te').mask('9999 9999 9999');
+$('.cnh').mask('99999999999');
+$('.certidao').mask('999999.99.99.9999.9.99999.999.9999999-99');
 $('.cep').mask('99.999-999');
 $('.valor').maskMoney({
   allowNegative: false, 
@@ -12,6 +14,81 @@ $('.valor').maskMoney({
   affixesStay: false
 });
 
+$( "#divdocumento" ).dialog({
+  autoOpen: false,
+  resizable: false,
+  draggable: true,
+  height: 500,
+  width:'90%',
+  modal:true,
+  buttons: {
+    "Fechar": function(){
+      $(this).dialog('close');
+    },
+    "Imprimir": function(){
+      var html="<html>";
+      html="<title>documentos</title>";
+      html+= document.getElementById("divdocumento").innerHTML;
+      html+="</html>";
+      var printWin = window.open('','','left=0,top=0,toolbar=0,scrollbars=0,status=0');
+      printWin.document.write(html);
+      printWin.document.close();
+      printWin.focus();
+      printWin.print();
+      printWin.close();
+      $(this).dialog('close');
+    }                     
+  }
+});
+//GERAR NUMERO DE CERTIDAO
+function gerarNumeroCertidao() {
+  //GERANDO MATRICULA
+  var n1 = Math.floor(Math.random() * 10);
+  var n2 = Math.floor(Math.random() * 10);
+  var n3 = Math.floor(Math.random() * 10);
+  var n4 = Math.floor(Math.random() * 10);
+  var n5 = Math.floor(Math.random() * 10);
+  var n6 = Math.floor(Math.random() * 10);
+  var n7 = Math.floor(Math.random() * 10);
+  var n8 = Math.floor(Math.random() * 10);
+  var n9 = Math.floor(Math.random() * 10);
+  var n10 = Math.floor(Math.random() * 10);
+  var n11 = Math.floor(Math.random() * 10);
+  var n12 = Math.floor(Math.random() * 10);
+  var n13 = Math.floor(Math.random() * 10);
+  var n14 = Math.floor(Math.random() * 10);
+  var n15 = Math.floor(Math.random() * 10);
+  var n16 = Math.floor(Math.random() * 10);
+  var n17 = Math.floor(Math.random() * 10);
+  var n18 = Math.floor(Math.random() * 10);
+  var n19 = Math.floor(Math.random() * 10);
+  var n20 = Math.floor(Math.random() * 10);
+  var n21 = Math.floor(Math.random() * 10);
+  var n22 = Math.floor(Math.random() * 10);
+  var n23 = Math.floor(Math.random() * 10);
+  var n24 = Math.floor(Math.random() * 10);
+  var n25 = Math.floor(Math.random() * 10);
+  var n26 = Math.floor(Math.random() * 10);
+  var n27 = Math.floor(Math.random() * 10);
+  var n28 = Math.floor(Math.random() * 10);
+  var n29 = Math.floor(Math.random() * 10);
+  var n30 = Math.floor(Math.random() * 10);
+  var n31 = Math.floor(Math.random() * 10);
+  var n32 = Math.floor(Math.random() * 10);
+
+  m1 = n1+''+n2+''+n3+''+n4+''+n5+''+n6;
+  m2 = n7+''+n8;
+  m3 = n9+''+n10;
+  m4 = n11+''+n12+''+n13+''+n14;
+  m5 = n15;
+  m6 = n16+''+n17+''+n18+''+n19+''+n20;
+  m7 = n21+''+n22+''+n23;
+  m8 = n24+''+n25+''+n26+''+n27+''+n28+''+n29+''+n30;
+  m9 = n31+''+n32;
+
+  retorno = m1+'.'+m2+'.'+m3+'.'+m4+'.'+m5+'.'+m6+'.'+m7+'.'+m8+'-'+m9;
+  return retorno;
+}
 //GERAR NUMERO DE CNH
 function gerarNumeroCNH() {
   var n1 = Math.floor(Math.random() * 10);

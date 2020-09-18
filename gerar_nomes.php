@@ -20,14 +20,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <title>Innovate Soft - Gerador Online de Nomes</title>
-  <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 
 </head>
 
 <body>
 
-  <div class="d-flex" id="wrapper">
+  <main role="main" class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <?php
     include_once "./sidebar.php";
@@ -35,11 +33,11 @@
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <section id="page-content-wrapper">
 
-        <?php
-        include_once "./menu.php";
-        ?>
+      <?php
+      include_once "./menu.php";
+      ?>
 
       <div class="container-fluid">
         <h1 class="mt-4">Gerador Online de Nomes</h1>
@@ -55,7 +53,7 @@
       <div id='divdocumento' style="display:none;width:800px;color: #808080" class="dialogo" title='Impressão de Documento' align='center'>
       </div>  
 
-      <main role="main" class="container">  
+      <div class="container">  
         <div class="starter-template" id="preencher" style="padding: 0 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
@@ -78,7 +76,7 @@
               <legend class="nivel_1">2. O que deseja gerar?</legend>
               <div class="form-row sub_nivel_1">
                 <div class="form-group col-md-12">
-                  <select id="tiponome_titular" class="form-control">
+                  <select id="tiponome_" class="form-control">
                     <option value="ps">Primeiro nome e Sobrenome</option>
                     <option value="p">Primeiro nome</option>
                     <option value="s">Sobrenome</option>
@@ -95,27 +93,30 @@
           <form>
 
             <fieldset>
-              <legend style="margin-left: -5px;font-weight: bold;margin-top: 25px;">Dados Pessoais</legend>
+              <legend style="margin-left: -5px;font-weight: bold;margin-top: 25px;">Resultado</legend>
 
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="nome_titular">Nome</label>
-                  <input type="text" class="form-control titular nome" id="nome_titular">
+                  <label for="nome_">Nome</label>
+                  <input type="text" class="form-control titular nome" id="nome_">
                 </div>
               </div>
             </fieldset>
 
             <div class="text-center">
-              <a class="btn btn-primary criar_personagem"  style="text-align: center;" href="#" role="button">GERAR NOMES</a>
+              <a class="btn btn-primary criar_nome"  style="text-align: center;" href="#" role="button">GERAR NOMES</a>
             </div>
           </form>
         </div>
-      </main><!-- /.container -->
-    </div>
+      </div>
+      <!-- /.container -->
+    </section>
     <!-- /#page-content-wrapper -->
-  </div>
+  </main>
   <!-- /#wrapper -->
-
+  <?php
+  include_once "./footer.php";
+  ?>
   <!-- Bootstrap core JavaScript -->
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
@@ -140,8 +141,8 @@
       $("#nome_pessoa").val('');
       $("#sobrenome").val('');
 
-      var tiponome_titular = $("#tiponome_titular").val();
-      if (tiponome_titular == 'p') {
+      var tiponome_ = $("#tiponome_").val();
+      if (tiponome_ == 'p') {
         //NOME
         if ($('input[name^="sexo_opc"]:checked').val() == 'M') {
           buscaNomeMasculino();
@@ -150,7 +151,7 @@
           buscaNomeFeminino();
         }
       }
-      else if(tiponome_titular == 's'){
+      else if(tiponome_ == 's'){
         //primeiro sobrenome
         buscaSobrenome();
         sobrenome1 = $("#sobrenome").val();
@@ -176,10 +177,10 @@
 
       sobrenome = sobrenome1+' '+sobrenome2
       nome_pessoa = $("#nome_pessoa").val();
-      $("#nome_titular").val(nome_pessoa+' '+sobrenome);
+      $("#nome_").val(nome_pessoa+' '+sobrenome);
 
       //ACAO DO BOTAO CRIAR PERSONAGEM
-      $('.criar_personagem').click(function(){
+      $('.criar_nome').click(function(){
         sobrenome1 = '';
         sobrenome2 = '';
         sobrenome = '';
@@ -187,8 +188,8 @@
         $("#nome_pessoa").val('');
         $("#sobrenome").val('');
 
-        var tiponome_titular = $("#tiponome_titular").val();
-        if (tiponome_titular == 'p') {
+        var tiponome_ = $("#tiponome_").val();
+        if (tiponome_ == 'p') {
           //NOME
           if ($('input[name^="sexo_opc"]:checked').val() == 'M') {
             buscaNomeMasculino();
@@ -197,7 +198,7 @@
             buscaNomeFeminino();
           }
         }
-        else if(tiponome_titular == 's'){
+        else if(tiponome_ == 's'){
           //primeiro sobrenome
           buscaSobrenome();
           sobrenome1 = $("#sobrenome").val();
@@ -223,35 +224,8 @@
 
         sobrenome = sobrenome1+' '+sobrenome2
         nome_pessoa = $("#nome_pessoa").val();
-        $("#nome_titular").val(nome_pessoa+' '+sobrenome);
-      });
-      
-      $( "#divdocumento" ).dialog({
-        autoOpen: false,
-        resizable: false,
-        draggable: true,
-        height: 500,
-        width:'90%',
-        modal:true,
-        buttons: {
-          "Fechar": function(){
-            $(this).dialog('close');
-          },
-          "Imprimir": function(){
-            var html="<html>";
-            html="<title>documentos</title>";
-            html+= document.getElementById("divdocumento").innerHTML;
-            html+="</html>";
-            var printWin = window.open('','','left=0,top=0,toolbar=0,scrollbars=0,status=0');
-            printWin.document.write(html);
-            printWin.document.close();
-            printWin.focus();
-            printWin.print();
-            printWin.close();
-            $(this).dialog('close');
-          }                     
-        }
-      });    
+        $("#nome_").val(nome_pessoa+' '+sobrenome);
+      });   
     });
   </script>
 

@@ -20,14 +20,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <title>Innovate Soft - Gerador Online de RG</title>
-  <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 
 </head>
 
 <body>
 
-  <div class="d-flex" id="wrapper">
+  <main role="main" class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <?php
     include_once "./sidebar.php";
@@ -35,11 +33,11 @@
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <section id="page-content-wrapper">
 
-        <?php
-        include_once "./menu.php";
-        ?>
+      <?php
+      include_once "./menu.php";
+      ?>
 
       <div class="container-fluid">
         <h1 class="mt-4">Gerador Online de RG</h1>
@@ -55,32 +53,35 @@
       <div id='divdocumento' style="display:none;width:800px;color: #808080" class="dialogo" title='Impressão de Documento' align='center'>
       </div>  
 
-      <main role="main" class="container">   
+      <div class="container">   
 
         <div class="starter-template" id="dados" style="padding: 0 1.5rem 3rem 1.5rem;">
           <form>
             <fieldset>
-              <legend style="margin-left: -5px;font-weight: bold;margin-top: 25px;">Dados Pessoais</legend>
+              <legend style="margin-left: -5px;font-weight: bold;margin-top: 25px;">Resultado</legend>
 
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="rg_titular">Número do RG</label>
-                  <input type="text" class="form-control titular" id="rg_titular">
+                  <label for="rg_">Número do RG</label>
+                  <input type="text" class="form-control rg" id="rg_">
                 </div>
               </div>
             </fieldset>
 
             <div class="text-center">
-              <a class="btn btn-primary criar_personagem"  style="text-align: center;" href="#" role="button">GERAR RG</a>
+              <a class="btn btn-primary criar_rg"  style="text-align: center;" href="#" role="button">GERAR RG</a>
             </div>
           </form>
         </div>
-      </main><!-- /.container -->
-    </div>
+      </div>
+      <!-- /.container -->
+    </section>
     <!-- /#page-content-wrapper -->
-  </div>
+  </main>
   <!-- /#wrapper -->
-
+  <?php
+  include_once "./footer.php";
+  ?>
   <!-- Bootstrap core JavaScript -->
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
@@ -98,39 +99,11 @@
   </script>
   <script type="text/javascript">
     $( document ).ready(function() { 
-      $("#rg_titular").val(gerarNumeroRG());
-
+      $("#rg_").val(gerarNumeroRG());
       //ACAO DO BOTAO CRIAR PERSONAGEM
-      $('.criar_personagem').click(function(){
-        $("#rg_titular").val(gerarNumeroRG());
-      });
-      
-      $( "#divdocumento" ).dialog({
-        autoOpen: false,
-        resizable: false,
-        draggable: true,
-        height: 500,
-        width:'90%',
-        modal:true,
-        buttons: {
-          "Fechar": function(){
-            $(this).dialog('close');
-          },
-          "Imprimir": function(){
-            var html="<html>";
-            html="<title>documentos</title>";
-            html+= document.getElementById("divdocumento").innerHTML;
-            html+="</html>";
-            var printWin = window.open('','','left=0,top=0,toolbar=0,scrollbars=0,status=0');
-            printWin.document.write(html);
-            printWin.document.close();
-            printWin.focus();
-            printWin.print();
-            printWin.close();
-            $(this).dialog('close');
-          }                     
-        }
-      });    
+      $('.criar_rg').click(function(){
+        $("#rg_").val(gerarNumeroRG());
+      });  
     });
   </script>
 
