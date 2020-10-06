@@ -14,11 +14,9 @@
   <link href="./css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="./css/simple-sidebar.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="fontawesome-free-5.6.3-web/css/all.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
+  <?php
+  include_once "./stylesheet.php";
+  ?>
   <title>Innovate Soft - Gerador Online de CNPJ</title>
 
 </head>
@@ -68,6 +66,7 @@
             </fieldset>
 
             <div class="text-center">
+              <a class="btn btn-primary clipboard"  style="text-align: center;" href="#" role="button" data-clipboard-target="#cnpj_">COPIAR</a>
               <a class="btn btn-primary criar_cnpj"  style="text-align: center;" href="#" role="button">GERAR CNPJ</a>
             </div>
           </form>
@@ -80,15 +79,8 @@
   <!-- /#wrapper -->
   <?php
   include_once "./footer.php";
+  include_once "./script.php";
   ?>
-  <!-- Bootstrap core JavaScript -->
-  <script src="./js/jquery-3.3.1.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/bootstrap.bundle.min.js"></script>
-  <script src="./js/jquery.mask.min.js"></script>
-  <script src="./js/jquery.maskMoney.min.js"></script>
-  <script src="./js/jquery-ui.js"></script>
-  <script src="./js/funcoes.js"></script>
   <!-- Menu Toggle Script -->
   <script>
     $("#menu-toggle").click(function(e) {

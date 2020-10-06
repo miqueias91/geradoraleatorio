@@ -1,3 +1,48 @@
+var clipboard = new ClipboardJS('.clipboard');
+
+clipboard.on('success', function(e) {
+  e.clearSelection();
+  toastr["success"]("Copiado para a área de transferência!");
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  };
+});
+
+clipboard.on('error', function(e) {
+  toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  };
+});
+      
 $('.date').mask('99/99/9999');
 $('.cpf').mask('999.999.999-99');
 $('.rg').mask('99.999.999-9');
