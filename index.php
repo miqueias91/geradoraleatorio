@@ -1,3 +1,11 @@
+<?php
+include_once "config/config.php";
+include_once "$CLASS_PATH/class.system.php";
+$sys = new system();
+if (!$ambiente_desenvolvimento) {
+  $sys->registraAcesso();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="app" ng-csp>
 <head>
@@ -27,7 +35,8 @@
     <script src="js/clipboard.min.js"></script>
     <script src="js/toastr.min.js"></script>
     <script src="js/index.js"></script>
- 
+    <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
     <title>Gerador Aleatório</title>
 </head>
@@ -511,9 +520,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_pessoa">GERAR PESSOA</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
 
@@ -1843,7 +1850,7 @@
   <ons-page>
       <ons-toolbar id="gerar_nomes_">
           <div class="left">
-              <ons-back-button>Gerador de Nomes</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
           </div>
           <div class="center"></div>
       </ons-toolbar>
@@ -1903,9 +1910,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_nome">GERAR NOME</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
       </main><!-- /.container -->
@@ -2010,9 +2015,48 @@
         $('.clipboard').click(function(){
           text = $("#nome_titular_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });
@@ -2046,7 +2090,7 @@
   <ons-page>
       <ons-toolbar id="gerar_cnh_">
           <div class="left">
-              <ons-back-button>Gerador de CNH</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
           </div>
           <div class="center"></div>
       </ons-toolbar>
@@ -2072,9 +2116,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_cnh">GERAR CNH</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
       </main><!-- /.container -->
@@ -2091,9 +2133,48 @@
         $('.clipboard').click(function(){
           text = $("#cnh_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });
@@ -2127,7 +2208,7 @@
   <ons-page>
       <ons-toolbar id="gerar_rg_">
           <div class="left">
-              <ons-back-button>Gerador de RG</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
           </div>
           <div class="center"></div>
       </ons-toolbar>
@@ -2151,9 +2232,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_rg">GERAR RG</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
       </main><!-- /.container -->
@@ -2172,9 +2251,48 @@
         $('.clipboard').click(function(){
           text = $("#rg_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });   
@@ -2208,7 +2326,7 @@
   <ons-page>
       <ons-toolbar id="gerar_tituloeleitor_">
           <div class="left">
-              <ons-back-button>Gerador de Título de Eleitor</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
           </div>
           <div class="center"></div>
       </ons-toolbar>
@@ -2232,9 +2350,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_te">GERAR TÍTULO DE ELEITOR</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
       </main><!-- /.container -->
@@ -2253,9 +2369,48 @@
         $('.clipboard').click(function(){
           text = $("#te_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });   
@@ -2289,7 +2444,7 @@
   <ons-page>
       <ons-toolbar id="gerar_cpf_">
           <div class="left">
-              <ons-back-button>Gerador de CPF</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
           </div>
           <div class="center"></div>
       </ons-toolbar>
@@ -2313,9 +2468,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_cpf">GERAR CPF</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
       </main><!-- /.container -->
@@ -2333,9 +2486,48 @@
         $('.clipboard').click(function(){
           text = $("#cpf_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });     
@@ -2369,7 +2561,7 @@
   <ons-page>
         <ons-toolbar id="gerar_pispasep_">
             <div class="left">
-                <ons-back-button>Gerador de PIS/PASEP</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2393,9 +2585,7 @@
             <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_pispasep">GERAR PIS/PASEP</ons-button>
             </div>
-            <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+            
           </form>
         </div>
       </main><!-- /.container -->
@@ -2414,9 +2604,48 @@
         $('.clipboard').click(function(){
           text = $("#pis_pasep_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });
@@ -2450,7 +2679,7 @@
   <ons-page>
         <ons-toolbar id="gerar_cnpj_">
             <div class="left">
-                <ons-back-button>Gerador de CNPJ</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2474,9 +2703,7 @@
               <div class="text-center" style="margin: 20px auto;display: grid;">
                 <ons-button id="btn_gerar_cnpj">GERAR CNPJ</ons-button>
               </div>
-              <div class="text-center txt_copia" style="margin: 20px auto;display: none;">
-                <p>Copiado para a área de transferência.</p>
-            </div>
+              
             </form>
           </div>
         </main><!-- /.container -->
@@ -2495,9 +2722,48 @@
         $('.clipboard').click(function(){
           text = $("#cnpj_unico").val();
           if (text != '') {
-            
-            cordova.plugins.clipboard.paste(function (text) { 
-              $('.txt_copia').css('display','grid');
+            var clipboard = new ClipboardJS('.clipboard');
+            clipboard.on('success', function(e) {
+              e.clearSelection();
+              toastr["success"]("Copiado para a área de transferência!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
+            });
+
+            clipboard.on('error', function(e) {
+              toastr["error"]("My name is Inigo Montoya. You killed my father. Prepare to die!");
+              toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              };
             });
           }          
         });
@@ -2531,7 +2797,7 @@
   <ons-page>
         <ons-toolbar id="gerar_carteiratrabalho_">
             <div class="left">
-                <ons-back-button>Gerador de Carteira de Trabalho</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2572,7 +2838,7 @@
   <ons-page>
         <ons-toolbar id="gerar_certidaonascimento_">
             <div class="left">
-                <ons-back-button>Gerador de Certidão de Nascimento</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2613,7 +2879,7 @@
   <ons-page>
         <ons-toolbar id="gerar_certidaocasamento_">
             <div class="left">
-                <ons-back-button>Gerador de Certidão de Casamento</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2654,7 +2920,7 @@
   <ons-page>
         <ons-toolbar id="gerar_certidaoobito_">
             <div class="left">
-                <ons-back-button>Gerador de Certidão de Óbito</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2695,7 +2961,7 @@
   <ons-page>
         <ons-toolbar id="gerar_endereco_">
             <div class="left">
-                <ons-back-button>Gerador de Comprovante de Endereço</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2736,7 +3002,7 @@
   <ons-page>
         <ons-toolbar id="gerar_atestadomedico_">
             <div class="left">
-                <ons-back-button>Gerador de Atestado Médico</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>
@@ -2777,7 +3043,7 @@
   <ons-page>
         <ons-toolbar id="gerar_passaporte_">
             <div class="left">
-                <ons-back-button>Gerador de Passaporte</ons-back-button>
+              <ons-back-button>Voltar</ons-back-button>
             </div>
             <div class="center"></div>
         </ons-toolbar>

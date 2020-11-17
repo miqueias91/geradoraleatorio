@@ -1,9 +1,0 @@
-<script src="./js/jquery-3.3.1.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/bootstrap.bundle.min.js"></script>
-<script src="./js/jquery.mask.min.js"></script>
-<script src="./js/jquery.maskMoney.min.js"></script>
-<script src="./js/jquery-ui.js"></script>
-<script src="./js/clipboard.min.js"></script>
-<script src="./js/toastr.min.js"></script>
-<script src="./js/funcoes.js"></script>

@@ -135,3 +135,15 @@ p, a {
     font-size: 14px!important;
     margin-left: 100px!important;
 }
+.button, ons-fab.fab {
+    background-color: #333!important;
+}
+.back-button, .back-button__icon {
+    color: #333;
+}
+.back-button__icon {
+    fill: #333;
+}
+.button, .list-item, .clipboard, .back-button__icon, .back-button {
+    cursor: pointer!important;
+}
