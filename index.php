@@ -235,6 +235,7 @@ if (!$ambiente_desenvolvimento) {
   <ons-page>
     <br>
     <p class="intro">Somos um app gratuito que reúne diversas ferramentas online com o propósito de auxiliar programadores, analistas de sistemas e estudantes a testarem seus softwares de forma rápida e facil. Nossos números de documentos são todos validados.</p>
+    <p class="intro">Também temos um aplicativo disponível na Google Play. <a href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.geradordedocumentos">Clique aqui para conhecer!</a></p>
 
 
 
