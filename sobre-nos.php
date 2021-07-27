@@ -20,8 +20,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <title>Innovate Soft - Gerador Online de RG</title>
-  <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7091486462236476"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>

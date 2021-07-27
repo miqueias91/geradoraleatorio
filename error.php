@@ -27,7 +27,10 @@
     <script src="js/clipboard.min.js"></script>
     <script src="js/toastr.min.js"></script>
     <script src="js/index.js"></script>
-  <title>Innovate Soft - Gerador Online de Documentos</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7091486462236476"
+     crossorigin="anonymous"></script>
+    <title>Innovate Soft - Gerador Online de Documentos</title>
 
 
 </head>

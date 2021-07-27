@@ -35,8 +35,8 @@ if (!$ambiente_desenvolvimento) {
     <script src="js/clipboard.min.js"></script>
     <script src="js/toastr.min.js"></script>
     <script src="js/index.js"></script>
-    <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7091486462236476"
+     crossorigin="anonymous"></script>
 
     <title>Gerador Aleatório</title>
 </head>
